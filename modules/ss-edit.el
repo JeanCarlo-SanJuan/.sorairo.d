@@ -1,5 +1,5 @@
 ;; Bindings that implement the usual behavior of other editors
-(require 'vsc-funcs)
+(require 'vscode-funcs)
 
 ;;Commands here
 (global-set-key (kbd "<escape>")  'keyboard-escape-quit) 
