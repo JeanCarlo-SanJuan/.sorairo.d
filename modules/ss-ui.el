@@ -2,7 +2,9 @@
 (tooltip-mode -1) ; No tooltips
 (menu-bar-mode -1) ; No menubar
 
-(use-package  all-the-icons)
+(use-package all-the-icons)
+(use-package command-log-mode)
+
 (use-package doom-modeline
   :ensure t
   :init (doom-modeline-mode 1)
@@ -10,9 +12,6 @@
 
 (use-package rainbow-delimiters
   :hook (prog-mode . rainbow-delimiters-mode))
-
-
-(use-package command-log-mode)
 
 (use-package ivy
   :diminish
@@ -32,7 +31,6 @@
          ("C-d" . ivy-reverse-i-search-kill))
   :init
   (ivy-mode 1))
-
 
 (use-package which-key
   :init (which-key-mode)
