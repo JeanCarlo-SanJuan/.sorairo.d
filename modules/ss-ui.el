@@ -3,7 +3,9 @@
 (menu-bar-mode -1) ; No menubar
 
 (use-package all-the-icons)
-(use-package command-log-mode)
+(use-package command-log-mode
+  :commands command-log-mode
+)
 
 (use-package doom-modeline
   :ensure t
@@ -13,8 +15,16 @@
 (use-package rainbow-delimiters
   :hook (prog-mode . rainbow-delimiters-mode))
 
+(use-package which-key
+  :defer
+  :init (which-key-mode)
+  :diminish which-key-mode
+  :config (setq which-key-idle-delay 0.5)
+  )
+
 (use-package ivy
   :diminish
+  :defer
   :bind (("C-f" . swiper)
          :map ivy-minibuffer-map
          ("TAB" . ivy-alt-done)
@@ -29,20 +39,18 @@
          :map ivy-reverse-i-search-map
          ("C-k" . ivy-previous-line)
          ("C-d" . ivy-reverse-i-search-kill))
-  :init
+  :config
   (ivy-mode 1))
 
-(use-package which-key
-  :init (which-key-mode)
-  :diminish which-key-mode
-  :config (setq which-key-idle-delay 0.5))
-
 (use-package ivy-rich
-  :init
-  (ivy-rich-mode 1))
+  :after ivy
+  :config
+  (ivy-rich-mode 1)
+)
 
 (use-package counsel
   :demand t
+  :defer
   :bind (("M-x" . counsel-M-x)
          ("C-x b" . counsel-ibuffer)
          ("C-x C-f" . counsel-find-file)
@@ -52,18 +60,5 @@
          ("C-r" . 'counsel-minibuffer-history))
   :config
   (setq ivy-initial-inputs-alist nil)) ;; Don't start searches with ^
-
-(use-package projectile
-  :diminish projectile-mode
-  :config (projectile-mode)
-  :bind-keymap
-  ("C-c p" . projectile-command-map)
-  :init
-  (when (file-directory-p "e:/Code")
-    (setq projectile-project-search-path '(("e:/Code" . 2) "d:/code")))
-  (setq projectile-switch-project-action #'projectile-dired)
-  )
-
-(global-set-key [C-tab] 'counsel-switch-buffer)
 
 (provide 'ss-ui)

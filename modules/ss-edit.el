@@ -6,7 +6,6 @@
 (global-set-key (kbd "C-a")  'mark-whole-buffer)
 (global-set-key (kbd "C-s")  'save-buffer)
 (global-set-key (kbd "C-q")  'beginning-of-line)
-(global-set-key (kbd "C-c b") 'treemacs)
 (global-set-key (kbd "C-`") 'eshell)
 
 ;;vscode  related
