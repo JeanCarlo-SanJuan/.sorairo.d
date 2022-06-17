@@ -4,6 +4,9 @@
 ;;(add-to-list 'package-archives '("melpa-stable" . "https://stable.melpa.org/packages/") t)
 (package-initialize)
 
+;; Temporarily reduce gc runs. The default is 800 kbs.
+(setq gc-cons-threshold (* 70 1000 1000))
+
 ;; Initialize use-package for non-linux
 (unless (package-installed-p 'use-package)
   (package-install 'use-package))
@@ -28,9 +31,6 @@
  '(doom-modeline-bar-inactive ((t (:background "black" :foreground "#5cc3cb"))))
  '(doom-modeline-inactive ((t (:inherit doom-modeline-bar-inactive))))
  '(scroll-bar ((t (:foreground "#f5deb3" :width condensed)))))
-
-;; The default is 800 kilobytes.  Measured in bytes.
-(setq gc-cons-threshold (* 50 1000 1000))
 
 (defun efs/display-startup-time ()
   (message "Emacs loaded in %s with %d garbage collections."

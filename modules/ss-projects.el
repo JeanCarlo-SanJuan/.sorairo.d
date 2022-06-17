@@ -3,7 +3,6 @@
 (use-package projectile
   :diminish projectile-mode
   :config (projectile-mode)
-  :defer
   :bind-keymap
   ("C-c p" . projectile-command-map)
   :init
@@ -12,8 +11,6 @@
   (setq projectile-switch-project-action #'projectile-dired)
   :defer
   )
-
-(global-set-key [C-tab] 'counsel-switch-buffer)
 
 (use-package treemacs
   :defer
@@ -25,5 +22,7 @@
   :after (treemacs projectile)
   :config(treemacs-project-follow-mode)
  )
+
+(with-eval-after-load 'projectile)
 
 (provide 'ss-projects)

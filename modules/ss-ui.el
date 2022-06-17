@@ -15,13 +15,6 @@
 (use-package rainbow-delimiters
   :hook (prog-mode . rainbow-delimiters-mode))
 
-(use-package which-key
-  :defer
-  :init (which-key-mode)
-  :diminish which-key-mode
-  :config (setq which-key-idle-delay 0.5)
-  )
-
 (use-package ivy
   :diminish
   :defer
@@ -39,8 +32,16 @@
          :map ivy-reverse-i-search-map
          ("C-k" . ivy-previous-line)
          ("C-d" . ivy-reverse-i-search-kill))
-  :config
-  (ivy-mode 1))
+	:init(ivy-mode)
+)
+
+(use-package which-key
+  :defer
+  :diminish which-key-mode
+  :init(which-key-mode)
+    :config
+     (setq which-key-idle-delay 0.5)
+)
 
 (use-package ivy-rich
   :after ivy
@@ -60,5 +61,7 @@
          ("C-r" . 'counsel-minibuffer-history))
   :config
   (setq ivy-initial-inputs-alist nil)) ;; Don't start searches with ^
+
+(global-set-key [C-tab] 'counsel-switch-buffer)
 
 (provide 'ss-ui)
