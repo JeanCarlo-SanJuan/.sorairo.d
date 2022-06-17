@@ -22,7 +22,7 @@
  '(doom-modeline-buffer-encoding 'nondefault)
  '(doom-modeline-buffer-name nil)
  '(package-selected-packages
-   '(dap-mode company-ctags treemacs-projectile treemacs-all-the-icons yasnippet js2-mode projectile counsel ivy-rich rainbow-mode all-the-icons doom-modeline rainbow-delimiters vue-mode swiper which-key ivy command-log-mode lsp-ui rustic treemacs sass-mode emmet-mode web-mode company lsp-mode ##)))
+   '(magit dap-mode company-ctags treemacs-projectile treemacs-all-the-icons yasnippet js2-mode projectile counsel ivy-rich rainbow-mode all-the-icons doom-modeline rainbow-delimiters vue-mode swiper which-key ivy command-log-mode lsp-ui rustic treemacs sass-mode emmet-mode web-mode company lsp-mode ##)))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
