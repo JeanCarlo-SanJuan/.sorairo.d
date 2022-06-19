@@ -20,14 +20,17 @@
 )
 
 (use-package treemacs-projectile
-  :after (treemacs projectile)
+  :after ('treemacs 'projectile)
   :config(treemacs-project-follow-mode)
 )
 
 (add-hook 'after-init-hook 'projectile-mode)
 
 (use-package magit
+  :defer
   :custom
   (magit-display-buffer-function #'magit-display-buffer-same-window-except-diff-v1))
+
+(add-hook 'server-after-make-frame-hook 'desktop-save-mode 'desktop-read)
 
 (provide 'ss-projects)
