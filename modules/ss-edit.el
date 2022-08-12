@@ -7,10 +7,10 @@
 ;;Commands here
 (global-set-key [escape]  'keyboard-escape-quit) 
 (global-set-key [C-a]  'mark-whole-buffer)
-(global-set-key [C-s]  'save-buffer)
-(global-set-key [C-q]  'beginning-of-line)
-(global-set-key [C-z] 'undo) ;; The default undo is untouched
-	
+;;(global-set-key [C-s]  'save-buffer)
+(global-set-key (kbd "C-q") 'beginning-of-line)
+(global-set-key [C-z] 'undo) ;; The default undo is untouched
+       
 ;;vscode related
 (global-set-key (kbd "C-`") 'eshell)
 (global-set-key [C-backspace] 'normalCBackspace)

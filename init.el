@@ -13,7 +13,7 @@
 
 (require 'use-package)
 (setq use-package-always-ensure t)
-(setq use-package-verbose t)
+(setq use-package-verbose t)b
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -22,7 +22,7 @@
  '(doom-modeline-buffer-encoding 'nondefault)
  '(doom-modeline-buffer-name nil)
  '(package-selected-packages
-   '(magit dap-mode company-ctags treemacs-projectile treemacs-all-the-icons yasnippet js2-mode projectile counsel ivy-rich rainbow-mode all-the-icons doom-modeline rainbow-delimiters vue-mode swiper which-key ivy command-log-mode lsp-ui rustic treemacs sass-mode emmet-mode web-mode company lsp-mode ##)))
+   '(typescript-mode ts-ls svelte-mode magit dap-mode company-ctags treemacs-projectile treemacs-all-the-icons yasnippet js2-mode projectile counsel ivy-rich rainbow-mode all-the-icons doom-modeline rainbow-delimiters vue-mode swiper which-key ivy command-log-mode lsp-ui rustic treemacs sass-mode emmet-mode web-mode company lsp-mode ##)))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -39,7 +39,7 @@
   (message "Emacs loaded in %s with %d garbage collections."
            (format "%.2f seconds"
                    (float-time
-                   (time-subtract after-init-time before-init-time)))
+                    (time-subtract after-init-time before-init-time)))
            gcs-done))
 
 (add-hook 'emacs-startup-hook #'efs/display-startup-time)

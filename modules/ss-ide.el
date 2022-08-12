@@ -68,6 +68,12 @@
   (add-hook 'js2-mode-hook #'lsp-deferred)
 )
 
+(use-package typescript-mode
+  :mode ("\\.ts\\'" . typescript-mode)
+  :config
+  (add-hook 'typescript-mode-hook #'lsp-deferred)
+)
+
 (use-package vue-mode
   :mode "\\.vue\\'"
   :config
@@ -83,6 +89,13 @@
    rustic-enable-detached-file-support t
    lsp-auto-guess-root t
   )
+)
+
+(use-package svelte-mode
+  :mode ("\\.svelte\\'" . svelte-mode)
+  :config
+  (add-hook 'svelte-mode-hook #'lsp-deferred)
+  (add-hook 'typescript-mode-hook #'lsp-deferred)
 )
 
 (with-eval-after-load 'company
